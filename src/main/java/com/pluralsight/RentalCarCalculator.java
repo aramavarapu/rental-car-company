@@ -22,5 +22,13 @@ public class RentalCarCalculator {
 
         System.out.print("Enter your age: ");
         int age = scanner.nextInt();
+
+        double basicRatePerDay = 29.99;
+        double tollTagPerDay = 3.95;
+        double gpsPerDay = 2.95;
+        double roadsideAssistancePerDay = 3.95;
+        double underageSurchargeRate = 0.30;
+
+
     }
 }
