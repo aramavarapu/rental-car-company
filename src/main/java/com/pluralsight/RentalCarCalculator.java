@@ -29,6 +29,22 @@ public class RentalCarCalculator {
         double roadsideAssistancePerDay = 3.95;
         double underageSurchargeRate = 0.30;
 
+        double baseRental = daysForTheRental * basicRatePerDay;
+
+        double tollTagPrice = switch (tollTag) {
+            case "yes", "Yes", "YES" -> tollTagPerDay;
+            default -> 0.0;
+        };
+        double gpsPrice = switch (gps) {
+            case "yes", "Yes", "YES" -> gpsPerDay;
+            default -> 0.0;
+        };
+        double roadsidePrice = switch (roadsideAssistance) {
+            case "yes", "Yes", "YES" -> roadsideAssistancePerDay;
+            default -> 0.0;
+        };
+        double optionsPrice = (tollTagPrice + gpsPrice + roadsidePrice * daysForTheRental);
+
 
     }
 }
