@@ -43,13 +43,22 @@ public class RentalCarCalculator {
             case "yes", "Yes", "YES" -> roadsideAssistancePerDay;
             default -> 0.0;
         };
-        double optionsPrice = (tollTagPrice + gpsPrice + roadsidePrice * daysForTheRental);
+        double optionsPrice = (tollTagPrice + gpsPrice + roadsidePrice) * daysForTheRental;
 
         double underageSurcharge = 0;
         if (age < 25) {
             underageSurcharge = baseRental * underageSurchargeRate;
         }
-        double finalPrice = basicRatePerDay + optionsPrice + underageSurcharge;
+        double finalPrice = baseRental + optionsPrice + underageSurcharge;
+
+        System.out.println();
+        System.out.println("Rental summary");
+        System.out.println("Pickup Date: " + pickupDate);
+        System.out.println("Number of days: " + daysForTheRental);
+        System.out.printf("Basic car rental: $%.2f%n", baseRental);
+        System.out.printf("Options cost: $%.2f%n", optionsPrice);
+        System.out.printf("Underage driver surcharge: $%.2f%n", underageSurcharge);
+        System.out.printf("Total cost: $%.2f%n", finalPrice);
 
 
 
