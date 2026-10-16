@@ -45,6 +45,14 @@ public class RentalCarCalculator {
         };
         double optionsPrice = (tollTagPrice + gpsPrice + roadsidePrice * daysForTheRental);
 
+        double underageSurcharge = 0;
+        if (age < 25) {
+            underageSurcharge = baseRental * underageSurchargeRate;
+        }
+        double finalPrice = basicRatePerDay + optionsPrice + underageSurcharge;
+
+
+
 
     }
 }
